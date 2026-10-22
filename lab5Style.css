@@ -1,0 +1,217 @@
+/* ===== 1. Хувьсагч: зөөлөн, сэргээсэн пастель өнгө ===== */
+:root {
+  --bg1: #ffeee0;        /* тэнгэрийн ягаан-шаргал */
+  --bg2: #f1e9ff;        /* лаванда */
+  --bg3: #e6f7ee;        /* гаа */
+  --text: #2b2750;       /* гүн индиго */
+  --muted: #5d5a80;
+  --accent: #5b46c9;     /* ягаан-цэнхэр */
+  --accent2: #ff7f6b;    /* шүүслэг коралл */
+  --line: rgba(43, 39, 80, .12);
+  --shadow: 0 10px 30px rgba(91, 70, 201, .12);
+  --radius: 26px;
+
+  --mint: #d4f1e2;  --lav: #e3dbfb;  --butter: #fff0b8;
+  --pink: #fdd9e0;  --sky: #d3eafb;  --peach: #ffe0cf;
+}
+
+/* ===== 2. Суурь ===== */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+body {
+  margin: 0; overflow-x: hidden;
+  color: var(--text);
+  background: linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 55%, var(--bg3) 100%) fixed;
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  line-height: 1.7;
+}
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 18px; }
+section { padding: 30px 0; }
+h1, h2, h3 { margin: 0; line-height: 1.2; }
+h2 { font-size: 1.7rem; font-weight: 800; margin-bottom: 20px; }
+h3 { font-size: 1.1rem; font-weight: 700; margin: 12px 0 6px; }
+p { margin: 0 0 10px; }
+a { transition: color .25s, background .25s; }
+.note { color: var(--muted); font-size: .88rem; }
+
+/* Өнгөний класс */
+.c-mint { background: var(--mint); }   .c-lav { background: var(--lav); }
+.c-butter { background: var(--butter); } .c-pink { background: var(--pink); }
+.c-sky { background: var(--sky); }     .c-peach { background: var(--peach); }
+
+/* ===== 3. HEADER + NAVIGATION (Flexbox) ===== */
+.site-header {
+  position: sticky; top: 0; z-index: 20;
+  background: rgba(255, 238, 224, .85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.header-bar {
+  display: flex; flex-wrap: wrap;
+  justify-content: space-between; align-items: center;
+  min-height: 64px;
+}
+.logo {
+  display: flex; align-items: center; gap: 10px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-style: italic; font-weight: 600;
+  font-size: 2.5rem; letter-spacing: 1.5px; line-height: 1;
+  color: var(--accent); text-decoration: none;
+}
+.logo-dot { width: 20px; height: 20px; border-radius: 50%; background: linear-gradient(135deg, var(--accent2), var(--accent)); }
+#menu-toggle { display: none; }
+.burger { cursor: pointer; font-size: 1.6rem; padding: 6px 10px; user-select: none; }
+.main-nav { display: none; flex-direction: column; width: 100%; padding-bottom: 10px; }
+#menu-toggle:checked ~ .main-nav { display: flex; }
+.main-nav a { padding: 13px 8px; color: var(--text); text-decoration: none; font-weight: 600; border-bottom: 1px solid var(--line); }
+.main-nav a:last-child { border-bottom: 0; }
+
+/* ===== 4. HERO (Grid) ===== */
+.hero {
+  display: grid; grid-template-columns: 1fr; gap: 24px; align-items: center;
+  margin-top: 18px; padding: 36px 22px; border-radius: 34px;
+  background:
+    radial-gradient(circle at 90% 10%, #ffd4c4 0, transparent 40%),
+    radial-gradient(circle at 5% 95%, #cdeedd 0, transparent 40%),
+    linear-gradient(135deg, #fbe3f0, #e4dcff);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.eyebrow { color: var(--accent); font-size: .82rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
+.slogan { font-size: 2.6rem; font-weight: 900; letter-spacing: -1px; margin: 8px 0 14px; }
+.slogan span { display: block; }
+.w1 { color: var(--accent); }
+.w2 { color: var(--accent2); }
+.w3 { color: #1f9d7a; }
+.lead { color: var(--muted); font-size: 1.05rem; max-width: 480px; margin-bottom: 22px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn {
+  display: inline-block; border: 0; cursor: pointer;
+  background: var(--accent); color: #fff;
+  padding: 13px 28px; border-radius: 999px;
+  font: inherit; font-weight: 700; text-decoration: none;
+  box-shadow: 0 8px 18px rgba(91, 70, 201, .3);
+  transition: transform .25s, box-shadow .25s;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn.alt { background: #fff; color: var(--accent); box-shadow: none; }
+
+/* Амьсгалах бөмбөлөг + солигдох үгс */
+.hero-visual { display: flex; justify-content: center; align-items: center; }
+.orb {
+  position: relative; width: 190px; height: 190px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: radial-gradient(circle at 30% 25%, #fff 0, #ffc9b9 38%, var(--accent) 135%);
+  box-shadow: 0 0 0 16px rgba(255, 127, 107, .15), 0 0 0 36px rgba(91, 70, 201, .09);
+  animation: breathe 9s ease-in-out infinite;
+}
+.word {
+  position: absolute; font-size: 1.5rem; font-weight: 800; color: var(--text);
+  opacity: 0; animation: swap 9s infinite;
+}
+.word:nth-child(2) { animation-delay: 3s; }
+.word:nth-child(3) { animation-delay: 6s; }
+@keyframes breathe { 0%, 100% { transform: scale(.88); } 50% { transform: scale(1.1); } }
+@keyframes swap { 0% { opacity: 0; } 6%, 28% { opacity: 1; } 34%, 100% { opacity: 0; } }
+
+/* ===== 5. ҮНДСЭН LAYOUT (CSS Grid) ===== */
+.layout { display: grid; grid-template-columns: 1fr; gap: 24px; padding: 8px 0 40px; }
+.content { min-width: 0; }
+.sidebar { display: grid; gap: 16px; align-content: start; }
+
+/* ===== 6. КАРТ ===== */
+.card-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+.card {
+  border-radius: var(--radius); padding: 22px;
+  box-shadow: var(--shadow);
+  transition: transform .3s;
+}
+.card-grid .card:hover { transform: translateY(-5px) rotate(-.5deg); }
+.card p { color: var(--muted); font-size: .96rem; margin: 0; }
+.ico {
+  width: 54px; height: 54px; border-radius: 18px;
+  display: grid; place-items: center; font-size: 1.7rem;
+  background: rgba(255, 255, 255, .7);
+}
+.person { text-align: center; }
+.avatar {
+  width: 90px; height: 90px; margin: 0 auto 6px; border-radius: 50%;
+  display: grid; place-items: center; font-size: 2.4rem;
+  background: rgba(255, 255, 255, .75);
+}
+
+/* Алхмууд */
+.steps { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr; gap: 14px; }
+.steps li { border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow); }
+.steps strong { display: block; font-size: 1.4rem; font-weight: 900; color: var(--accent); }
+.steps span { color: var(--muted); }
+
+/* Том ишлэл */
+.big-quote {
+  margin: 0 0 18px; padding: 24px 22px; border-radius: var(--radius);
+  background: linear-gradient(135deg, var(--accent), #8a63e8);
+  color: #fff; font-size: 1.25rem; font-weight: 700; line-height: 1.5;
+  box-shadow: var(--shadow);
+}
+
+/* Форм */
+.booking { display: grid; gap: 10px; }
+label { font-weight: 700; font-size: .93rem; }
+input, select, textarea {
+  width: 100%; padding: 13px 14px; font: inherit;
+  border: 2px solid transparent; border-radius: 14px;
+  background: #fff; color: var(--text);
+  transition: border-color .25s;
+}
+input:focus, select:focus, textarea:focus { outline: 0; border-color: var(--accent); }
+
+/* Sidebar */
+.remind { font-size: 1.02rem; color: var(--text); font-weight: 600; }
+.info-list, .link-list { list-style: none; margin: 10px 0 0; padding: 0; }
+.info-list li { display: flex; justify-content: space-between; gap: 10px; padding: 8px 0; border-bottom: 1px dashed var(--line); font-size: .92rem; }
+.info-list li:last-child { border-bottom: 0; }
+.link-list li { padding: 6px 0; }
+.link-list a { color: var(--accent); font-weight: 600; text-decoration: none; }
+.link-list a:hover { text-decoration: underline; }
+
+/* ===== 7. FOOTER (Flexbox) ===== */
+.site-footer { background: rgba(255, 255, 255, .5); border-top: 1px solid var(--line); padding: 22px 0; color: var(--muted); font-size: .9rem; }
+.footer-bar { display: flex; flex-direction: column; align-items: center; gap: 4px; text-align: center; }
+.footer-bar p { margin: 0; }
+
+/* Хөдөлгөөнийг хүсэхгүй хэрэглэгчид */
+@media (prefers-reduced-motion: reduce) {
+  .orb { animation: none; width: auto; height: auto; padding: 28px; border-radius: 30px; }
+  .word { position: static; opacity: 1; animation: none; display: block; }
+  * { transition: none !important; }
+}
+
+/* ===== 8. TABLET (≥ 600px) ===== */
+@media (min-width: 600px) {
+  .wrap { padding: 0 28px; }
+  .hero { padding: 44px 36px; }
+  .slogan { font-size: 3.4rem; }
+  .card-grid { grid-template-columns: repeat(2, 1fr); }
+  .steps { grid-template-columns: repeat(3, 1fr); }
+  .sidebar { grid-template-columns: repeat(2, 1fr); }
+  .footer-bar { flex-direction: row; justify-content: space-between; }
+}
+
+/* ===== 9. DESKTOP (≥ 960px) ===== */
+@media (min-width: 960px) {
+  .burger { display: none; }
+  .main-nav { display: flex; flex-direction: row; align-items: center; width: auto; padding: 0; gap: 6px; }
+  .main-nav a { border: 0; padding: 8px 16px; border-radius: 999px; }
+  .main-nav a:hover { background: var(--lav); }
+  .main-nav .nav-cta { background: var(--accent2); color: #fff; }
+  .main-nav .nav-cta:hover { background: #f06a55; }
+
+  .hero { grid-template-columns: 1.2fr 1fr; padding: 60px 56px; }
+  .slogan { font-size: 4.2rem; }
+  .orb { width: 260px; height: 260px; }
+  .word { font-size: 2rem; }
+
+  .layout { grid-template-columns: minmax(0, 1fr) 310px; gap: 32px; }
+  .card-grid { grid-template-columns: repeat(3, 1fr); }
+  .sidebar { grid-template-columns: 1fr; position: sticky; top: 84px; align-self: start; }
+}

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Сэтгэлд — Pause. Breathe. Begin.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="lab5Style.css">
+</head>
+<body>
+
+  <!-- HEADER + NAVIGATION (Flexbox) -->
+  <header class="site-header">
+    <div class="wrap header-bar">
+      <a class="logo" href="#top"><span class="logo-dot"></span>Сэтгэлд минь</a>
+      <input type="checkbox" id="menu-toggle" aria-label="Цэс нээх">
+      <label class="burger" for="menu-toggle">☰</label>
+      <nav class="main-nav" aria-label="Үндсэн цэс">
+        <a href="#services">Үйлчилгээ</a>
+        <a href="#process">Алхмууд</a>
+        <a href="#tips">Зөвлөгөө</a>
+        <a href="#team">Зөвлөхүүд</a>
+        <a class="nav-cta" href="#book">Цаг авах</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="wrap" id="top">
+
+    <!-- HERO (Grid) -->
+    <section class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">Сэтгэл хүртэл амрах газар эрдэг</p>
+        <h1 class="slogan">
+          <span class="w1">Pause.</span>
+          <span class="w2">Breathe.</span>
+          <span class="w3">Begin.</span>
+        </h1>
+        <p class="lead">Дотор тань юу болж байгааг дэлхий мэдэх албагүй. Харин та мэдэх хэрэгтэй.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#book">Цаг авах</a>
+          <a class="btn alt" href="#tips">Жижиг зөвлөгөө</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="orb">
+          <span class="word">Pause</span>
+          <span class="word">Breathe</span>
+          <span class="word">Begin</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ҮНДСЭН LAYOUT (CSS Grid): main + sidebar -->
+    <div class="layout">
+
+      <main class="content">
+
+        <section id="services">
+          <h2>Бид</h2>
+          <div class="card-grid">
+            <article class="card c-mint">
+              <span class="ico" aria-hidden="true">🧠</span>
+              <h3>Хувийн зөвлөгөө</h3>
+              <p>Толгойд эргэлдэж буй бодлуудаа цэгцэлж. Амар тайван, эрүүл байя.</p>
+            </article>
+            <article class="card c-lav">
+              <span class="ico" aria-hidden="true">👨‍👩‍👧</span>
+              <h3>Гэр бүлийн зөвлөгөө</h3>
+              <p>Хайртай бүхэнтэйгээ эн тэргүүнд ойлголцъё.</p>
+            </article>
+            <article class="card c-butter">
+              <span class="ico" aria-hidden="true">💼</span>
+              <h3>Ажил карьерын сэтгэл зүй</h3>
+              <p>Бид ойлгоно, зөвлөнө. Хамтдаа гаргалгаа олно.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="process">
+          <h2>Гурван алхам</h2>
+          <ol class="steps">
+            <li class="c-pink"><strong>Pause</strong><span>Зогс. Амсхийгээд бидэнд даатга.</span></li>
+            <li class="c-sky"><strong>Breathe</strong><span>Амьсгаагаа ав. Сэтгэл зүйчтэйгээ анхны уулзалтаа хий.</span></li>
+            <li class="c-mint"><strong>Begin</strong><span>Эхэлье. Хамтдаа бүгдийг дээрдүүлье.</span></li>
+          </ol>
+        </section>
+
+        <section id="tips">
+          <h2>Яг одооноос чиний уриа</h2>
+          <blockquote class="big-quote">
+            Сэтгэл яг л амьдрал шиг. Өнөөдөр хэцүү байсан ч маргааш болдгоороо болно. Магадгүй сайхан өдөр өнгөрөх байх.
+          </blockquote>
+          <div class="card-grid">
+            <article class="card c-sky">
+              <span class="ico" aria-hidden="true">🌬️</span>
+              <h3>Гаргах амьсгалаа уртасга</h3>
+              <p>Татахаасаа гаргахыг нь урт болговол бие "аюулгүй" гэдгийг мэдэрч намждаг.</p>
+            </article>
+            <article class="card c-pink">
+              <span class="ico" aria-hidden="true">🏷️</span>
+              <h3>Мэдрэмжээ нэрлэ</h3>
+              <p>"Би одоо түгшиж байна" гэж хэлэхэд л хүчтэй мэдрэмж намжиж эхэлдэг.</p>
+            </article>
+            <article class="card c-butter">
+              <span class="ico" aria-hidden="true">🖐️</span>
+              <h3>5 · 4 · 3 · 2 · 1</h3>
+              <p>Харагдах 5, хүрэгдэх 4, сонсогдох 3, үнэртэх 2, амтлагдах 1 зүйлээ нэрлэ. Бодол чинь эргээд "одоо"-д ирнэ.</p>
+            </article>
+            <article class="card c-mint">
+              <span class="ico" aria-hidden="true">🐢</span>
+              <h3>2 минутын дүрэм</h3>
+              <p>Хийхээс залхаж байгаа зүйлээ зөвхөн 2 минут хий. Эхлэх нь хамгийн хэцүү хэсэг.</p>
+            </article>
+            <article class="card c-lav">
+              <span class="ico" aria-hidden="true">🌙</span>
+              <h3>Нойрны өмнөх 30 минут</h3>
+              <p>Дэлгэцгүй 30 минут тархинд "өдөр дууслаа" гэсэн дохио өгдөг.</p>
+            </article>
+            <article class="card c-peach">
+              <span class="ico" aria-hidden="true">💬</span>
+              <h3>Нэг хүнд хэл</h3>
+              <p>Дотроо хадгалсан түгшүүрээ хүнд хэлснээр ихэвчлэн хөнгөрдөг. Итгэдэг хүндээ нэг өгүүлбэр илгээ.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="team">
+          <h2>Манай зөвлөхүүд</h2>
+          <div class="card-grid">
+            <article class="card person c-lav">
+              <span class="avatar">👩‍⚕️</span>
+              <h3>Б. Оюунаа</h3>
+              <p>Мэргэжлийн сэтгэл зүйч · 8 жил</p>
+            </article>
+            <article class="card person c-mint">
+              <span class="avatar">👨‍⚕️</span>
+              <h3>Д. Төмөр</h3>
+              <p>Гэр бүлийн зөвлөх · 6 жил</p>
+            </article>
+            <article class="card person c-butter">
+              <span class="avatar">🧑‍⚕️</span>
+              <h3>Э. Саруул</h3>
+              <p>Хүүхэд, өсвөрийн сэтгэл зүйч · 5 жил</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="book">
+          <h2>Цаг авах</h2>
+          <form class="card booking c-peach" onsubmit="event.preventDefault(); document.getElementById('ok').hidden = false;">
+            <label for="n">Нэр</label>
+            <input id="n" required placeholder="Таны нэр">
+            <label for="p">Утас</label>
+            <input id="p" type="tel" required placeholder="99xx xxxx">
+            <label for="t">Үйлчилгээ</label>
+            <select id="t">
+              <option>Хувийн зөвлөгөө</option>
+              <option>Гэр бүлийн зөвлөгөө</option>
+              <option>Ажлын байрны сэтгэл зүй</option>
+            </select>
+            <label for="m">Товч тайлбар</label>
+            <textarea id="m" rows="3"></textarea>
+            <button class="btn" type="submit">Илгээх</button>
+            <p id="ok" class="note" hidden>✅ Баярлалаа! Бид тантай удахгүй холбогдоно.</p>
+          </form>
+        </section>
+
+      </main>
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar" aria-label="Нэмэлт мэдээлэл">
+        <div class="card c-butter">
+          <h3>✨ Өнөөдрийн сануулга</h3>
+          <p class="remind">Чи өнөөдөр хангалттай сайн байна. Жижиг алхам ч алхам.</p>
+        </div>
+        <div class="card c-sky">
+          <h3>🕘 Ажлын цаг</h3>
+          <ul class="info-list">
+            <li><span>Даваа – Баасан</span><strong>09:00 – 18:00</strong></li>
+            <li><span>Бямба</span><strong>10:00 – 15:00</strong></li>
+            <li><span>Ням</span><strong>Амарна</strong></li>
+            <li><span>Онлайн зөвлөгөө</span><strong>24/7❤️😉</strong></li>
+          </ul>
+        </div>
+        <div class="card c-pink">
+          <h3>🚨 Яаралтай үед</h3>
+          <p>Ноцтой асуудал гарвал яаралтай тусламжийн <strong>102, 103</strong> дугаарт.</p>
+        </div>
+        <div class="card c-mint">
+          <h3>🔗 Хурдан холбоос</h3>
+          <ul class="link-list">
+            <li><a href="#services">Үйлчилгээний төрөл</a></li>
+            <li><a href="#tips">Өдөр тутмын зөвлөгөө</a></li>
+            <li><a href="#book">Цаг захиалах</a></li>
+          </ul>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <!-- FOOTER (Flexbox) -->
+  <footer class="site-footer">
+    <div class="wrap footer-bar">
+      <p><strong>Сэтгэлд</strong> · Pause. Breathe. Begin.</p>
+      <p>© 2026 · Улаанбаатар · Бүх мэдээлэл нууцлагдана.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
